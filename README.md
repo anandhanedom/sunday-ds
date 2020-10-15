@@ -2,7 +2,7 @@
 
 The ultimate React reference
 
-### Important array methods
+### You might wanna use these array methods
 
 1. splice()
 2. slice()
@@ -13,3 +13,4 @@ The ultimate React reference
 7. filter()
 8. reduce()
 9. find()
+10. findIndex()
