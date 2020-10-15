@@ -3,6 +3,8 @@ import './App.css';
 
 import Person from './Person/Person';
 
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+
 class App extends Component {
   state = {
     persons: [
@@ -60,13 +62,15 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => (
-            <Person
-              key={person.id}
-              name={person.name}
-              age={person.age}
-              click={() => this.deletePersonHandler(index)}
-              changed={(e) => this.nameChangedHandler(e, person.id)}
-            />
+            <ErrorBoundary key={person.id}>
+              {' '}
+              <Person
+                name={person.name}
+                age={person.age}
+                click={() => this.deletePersonHandler(index)}
+                changed={(e) => this.nameChangedHandler(e, person.id)}
+              />{' '}
+            </ErrorBoundary>
           ))}
         </div>
       );
