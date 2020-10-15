@@ -14,3 +14,7 @@ The ultimate React reference
 8. reduce()
 9. find()
 10. findIndex()
+
+### Useful packages
+
+1. Radium - for CSS
