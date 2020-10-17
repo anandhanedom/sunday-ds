@@ -4,6 +4,9 @@ import './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Aux';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +20,7 @@ class App extends Component {
       ],
       otherState: 'some other value',
       showPersons: false,
+      showCockpit: true,
     };
   }
 
@@ -27,6 +31,15 @@ class App extends Component {
 
   componentDidMount = () => {
     console.log('[App.js] componentDidMount');
+  };
+
+  componentDidUpdate = () => {
+    console.log('[App.js] componentDidUpdate');
+  };
+
+  shouldComponentUpdate = (nextProps, nextState) => {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
   };
 
   nameChangedHandler = (event, id) => {
@@ -61,6 +74,7 @@ class App extends Component {
 
   render() {
     console.log('[App.js] Render');
+
     let persons = null;
 
     if (this.state.showPersons) {
@@ -74,18 +88,27 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Cockpit
-          title={this.props.appTitle}
-          persons={this.state.persons}
-          showPersons={this.state.showPersons}
-          click={this.togglePersonsHandler}
-        />
+      <Aux>
+        <button
+          onClick={() => {
+            this.setState({ showCockpit: false });
+          }}
+        >
+          Remove Cockpit
+        </button>
+        {this.state.showCockpit ? (
+          <Cockpit
+            title={this.props.appTitle}
+            personsLength={this.state.persons.length}
+            showPersons={this.state.showPersons}
+            click={this.togglePersonsHandler}
+          />
+        ) : null}
 
         {persons}
-      </div>
+      </Aux>
     );
   }
 }
 
-export default App;
+export default withClass(App, App);
