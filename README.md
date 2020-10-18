@@ -18,3 +18,4 @@ The ultimate React reference
 ### Useful packages
 
 1. Radium - for CSS
+2. PropTypes - display invalid props
