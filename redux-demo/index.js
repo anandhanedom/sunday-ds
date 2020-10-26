@@ -1,6 +1,6 @@
 const redux = require('redux');
 
-const createStore = redux.createStore();
+const createStore = redux.createStore;
 
 const BUY_CAKE = 'BUY_CAKE';
 
@@ -37,4 +37,12 @@ const store = createStore(reducer);
 console.log('Initial state', store.getState());
 
 //Subscribe for changes
-store.subscribe(() => console.log('Updated state', store.getState()));
+const unsubscribe = store.subscribe(() =>
+  console.log('Updated state', store.getState())
+);
+
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+
+unsubscribe();
