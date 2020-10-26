@@ -17,8 +17,8 @@ The ultimate React reference
 
 ### Lifecycle methods
 
-![creation](/img/creation.png)
-![updation](/img/updation.png)
+![creation](/img/creation-cycle.png)
+![updation](/img/updation-cycle.png)
 
 ### Useful packages
 
