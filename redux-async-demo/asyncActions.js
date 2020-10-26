@@ -1,5 +1,8 @@
 const redux = require('redux');
 const createStore = redux.createStore;
+const applyMiddleware = redux.applyMiddleware;
+const thunkMiddleware = require('redux-thunk').default;
+const axios = require('axios');
 
 const initialState = {
   loading: false,
@@ -60,4 +63,6 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
+const fetchUsers = () => {};
+
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
