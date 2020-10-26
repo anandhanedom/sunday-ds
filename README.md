@@ -15,6 +15,11 @@ The ultimate React reference
 9. find()
 10. findIndex()
 
+### Lifecycle methods
+
+![creation](/img/creation.png)
+![updation](/img/updation.png)
+
 ### Useful packages
 
 1. Radium - for CSS
