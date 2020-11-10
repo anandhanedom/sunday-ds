@@ -24,3 +24,9 @@ The ultimate React reference
 
 1. Radium - for CSS
 2. PropTypes - display invalid props
+3. Shortid - key generation
+
+### Useful articles
+
+1. https://www.codementor.io/blog/react-optimization-5wiwjnf9hj (Optimization)
+2. https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349 (Optimization \*)
