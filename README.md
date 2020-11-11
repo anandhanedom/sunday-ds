@@ -35,6 +35,7 @@ The ultimate React reference
 ### Useful articles (JS)
 
 1. JS best practices : https://www.w3schools.com/js/js_best_practices.asp
+2. Axios error handling : https://www.intricatecloud.io/2020/03/how-to-handle-api-errors-in-your-web-app-using-axios/
 
 ### Youtube (React)
 
