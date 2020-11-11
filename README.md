@@ -28,7 +28,9 @@ The ultimate React reference
 
 ### Useful articles
 
-1.  https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349 (Optimization)
+1. React optimization : https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349
+
+2. JS best practices : https://www.w3schools.com/js/js_best_practices.asp
 
 ### Youtube
 
