@@ -26,13 +26,17 @@ The ultimate React reference
 2. PropTypes - display invalid props
 3. Shortid - key generation
 
-### Useful articles
+### Useful articles (React)
 
 1. React optimization : https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349
 
-2. JS best practices : https://www.w3schools.com/js/js_best_practices.asp
+2. Use effect warning : https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
 
-### Youtube
+### Useful articles (JS)
+
+1. JS best practices : https://www.w3schools.com/js/js_best_practices.asp
+
+### Youtube (React)
 
 1. CORS error : https://www.youtube.com/watch?v=zoSJ3bNGPp0
 2. Env variable setup : https://www.youtube.com/watch?v=KJE4LtAxLEw
