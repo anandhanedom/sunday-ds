@@ -34,5 +34,5 @@ The ultimate React reference
 
 ### Youtube
 
-1. CORS error : https://www.youtube.com/watch?v=gPzMRoPDrFk
+1. CORS error : https://www.youtube.com/watch?v=zoSJ3bNGPp0
 2. Env variable setup : https://www.youtube.com/watch?v=KJE4LtAxLEw
