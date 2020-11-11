@@ -28,5 +28,9 @@ The ultimate React reference
 
 ### Useful articles
 
-1. https://www.codementor.io/blog/react-optimization-5wiwjnf9hj (Optimization)
-2. https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349 (Optimization \*)
+1.  https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349 (Optimization)
+
+### Youtube
+
+1. CORS error : https://www.youtube.com/watch?v=gPzMRoPDrFk
+2. Env variable setup : https://www.youtube.com/watch?v=KJE4LtAxLEw
