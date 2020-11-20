@@ -17,6 +17,8 @@ console.log(resGen);
 console.log(resGen.next());
 console.log(resGen.next());
 console.log(resGen.next());
+console.log(resGen.next());
+console.log(resGen.next());
 
 const resGenForOf = sayHiGen();
 
@@ -39,4 +41,5 @@ const newGen = newGenerator();
 console.log('*********************');
 console.log(newGen.next());
 console.log(newGen.next());
+console.log(newGen.next('custom value'));
 console.log(newGen.next('custom value'));
