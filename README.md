@@ -42,3 +42,4 @@ The ultimate React reference
 
 1. CORS error : https://www.youtube.com/watch?v=zoSJ3bNGPp0
 2. Env variable setup : https://www.youtube.com/watch?v=KJE4LtAxLEw
+3. Code evolution redux : https://www.youtube.com/watch?v=9boMnm5X9ak&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK
