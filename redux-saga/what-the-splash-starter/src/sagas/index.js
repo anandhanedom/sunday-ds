@@ -1,4 +1,4 @@
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, take, call } from 'redux-saga/effects';
 
 // Here's how it works
 // watcher saga -> actions -> worker saga
@@ -7,14 +7,26 @@ import { takeEvery, put } from 'redux-saga/effects';
 function* workerSaga() {
     console.log('hey from worker!!');
 
-    yield put();
+    yield put({ type: 'ACTION_FROM_WORKER' });
+}
+
+function* byebyeSaga() {
+    console.log('bye bye!');
 }
 
 //watcher saga
 function* rootSaga() {
     // console.log('Hello world!'); test saga is working or not
 
-    yield takeEvery('HELLO', workerSaga);
+    // yield takeEvery('LOGIN', workerSaga);
+    yield take('LOGIN');
+    yield call(workerSaga);
+
+    // yield take('ADD_TO_CART');
+    // yield take('BUY');
+
+    yield take('LOGOUT');
+    yield call(byebyeSaga);
 }
 
 export default rootSaga;
