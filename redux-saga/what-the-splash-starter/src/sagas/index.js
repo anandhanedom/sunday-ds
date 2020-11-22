@@ -30,7 +30,7 @@ function* rootSaga() {
     // yield take('LOGOUT');
     // yield call(byebyeSaga);
     //Actual code below
-    takeEvery(IMAGES.LOAD, handleImagesLoad);
+    yield takeEvery(IMAGES.LOAD, handleImagesLoad);
 }
 
 export default rootSaga;
