@@ -9,9 +9,8 @@ const fetchImages = async page => {
     if (res.status >= 400) {
         throw new Error(data.errors);
     }
-    {
-        return data;
-    }
+
+    return data;
 };
 
 export { fetchImages };
