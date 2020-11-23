@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { loadImages } from '../../actions/index';
+import Button from '../Button/index';
 
 import './styles.css';
 
@@ -9,17 +10,11 @@ const key = '5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
 
 class ImageGrid extends Component {
     componentDidMount() {
-        fetch(`https://api.unsplash.com/photos/?client_id=${key}&per_page=28`)
-            .then(res => res.json())
-            .then(images => {
-                this.setState({
-                    images,
-                });
-            });
+        this.props.loadImages();
     }
 
     render() {
-        const { images } = this.props;
+        const { images, error, isLoading } = this.props;
         return (
             <div className="content">
                 <section className="grid">
@@ -37,7 +32,10 @@ class ImageGrid extends Component {
                         </div>
                     ))}
                 </section>
-                <button onClick={this.props.loadImages}>Load More</button>
+                {error && <div className="error">{JSON.stringify(error)}</div>}
+                <Button onClick={() => !isLoading && loadImages()}>
+                    Load More
+                </Button>
             </div>
         );
     }

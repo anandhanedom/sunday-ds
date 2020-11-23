@@ -9,7 +9,7 @@ const errorReducer = (state = [], action) => {
             return false;
 
         case IMAGES.LOAD_FAIL:
-            return false;
+            return true;
 
         default:
             return state;
