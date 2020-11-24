@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loadImages } from '../../actions/index';
-import { IMAGES } from '../../constants';
-
+import Button from '../Button';
+import Stats from '../Stats';
+import { loadImages } from '../../actions';
 import './styles.css';
 
-const key = '5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
-
 class ImageGrid extends Component {
-    state = {
-        images: [],
-    };
-
     componentDidMount() {
-        fetch(`https://api.unsplash.com/photos/?client_id=${key}&per_page=28`)
-            .then(res => res.json())
-            .then(images => {
-                this.setState({
-                    images,
-                });
-            });
+        this.props.loadImages();
     }
 
     render() {
-        const { images } = this.state;
+        const { isLoading, images, loadImages, error, imageStats } = this.props;
         return (
             <div className="content">
                 <section className="grid">
@@ -35,6 +23,7 @@ class ImageGrid extends Component {
                                 image.height / image.width,
                             )}`}
                         >
+                            <Stats stats={imageStats[image.id]} />
                             <img
                                 src={image.urls.small}
                                 alt={image.user.username}
@@ -42,16 +31,23 @@ class ImageGrid extends Component {
                         </div>
                     ))}
                 </section>
-                <button onClick={this.props.loadImages}>Load More</button>
+                {error && <div className="error">{JSON.stringify(error)}</div>}
+                <Button
+                    onClick={() => !isLoading && loadImages()}
+                    loading={isLoading}
+                >
+                    Load More
+                </Button>
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ isLoading, images, error }) => ({
+const mapStateToProps = ({ isLoading, images, error, imageStats }) => ({
     isLoading,
     images,
     error,
+    imageStats,
 });
 
 const mapDispatchToProps = dispatch => ({
