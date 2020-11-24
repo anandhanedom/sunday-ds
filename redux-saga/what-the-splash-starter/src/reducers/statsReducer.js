@@ -1,4 +1,4 @@
-import { STATS } from '../constants/index';
+import { STATS } from '../constants';
 
 const statsReducer = (state = {}, action) => {
     switch (action.type) {

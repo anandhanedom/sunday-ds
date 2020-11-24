@@ -1,6 +1,5 @@
-import { IMAGES, STATS } from '../constants/index';
+import { IMAGES, STATS } from '../constants';
 
-//Images actions
 const loadImages = () => ({
     type: IMAGES.LOAD,
 });
@@ -15,9 +14,8 @@ const setError = error => ({
     error,
 });
 
-//Stat actions
 const loadImageStats = id => ({
-    type: IMAGES.LOAD,
+    type: STATS.LOAD,
     id,
 });
 
@@ -28,7 +26,7 @@ const setImageStats = (id, downloads) => ({
 });
 
 const setImageStatsError = id => ({
-    type: IMAGES.LOAD_FAIL,
+    type: STATS.LOAD_FAIL,
     id,
 });
 

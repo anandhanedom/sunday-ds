@@ -1,17 +1,28 @@
-import { take, fork, put } from 'redux-saga/effects';
+import { take, call, fork, put } from 'redux-saga/effects';
 
-import { IMAGES } from '../constants/index';
-import { fetchImageStats } from '../api/index';
-import { loadImageStats, setImageStats } from '../actions';
+import { IMAGES } from '../constants';
+import { fetchImageStats } from '../api';
+import { loadImageStats, setImageStats, setImageStatsError } from '../actions';
 
-function* handleStatsRequest(id) {
-    yield put(loadImageStats, id);
-    const res = yield call(fetchImageStats, id);
-    yield put(setImageStats(id, res.downloads.total));
+export function* handleStatsRequest(id) {
+    for (let i = 0; i < 3; i++) {
+        try {
+            yield put(loadImageStats(id));
+            const res = yield call(fetchImageStats, id);
+            yield put(setImageStats(id, res.downloads.total));
+            // image was loaded so we exit the generator
+            return true;
+        } catch (e) {
+            // we just need to retry and dispactch an error
+            // if we tried more than 3 times
+        }
+    }
+    yield put(setImageStatsError(id));
 }
 
-function* watchStatsRequest() {
+export default function* watchStatsRequest() {
     while (true) {
+        // we get the action here
         const { images } = yield take(IMAGES.LOAD_SUCCESS);
 
         for (let i = 0; i < images.length; i++) {
@@ -19,5 +30,3 @@ function* watchStatsRequest() {
         }
     }
 }
-
-export default watchStatsRequest;
