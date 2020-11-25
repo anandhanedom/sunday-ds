@@ -37,6 +37,7 @@ The ultimate React reference
 1. JS best practices : https://www.w3schools.com/js/js_best_practices.asp
 2. Axios error handling : https://www.intricatecloud.io/2020/03/how-to-handle-api-errors-in-your-web-app-using-axios/
 3. Axios header appending issue : https://github.com/axios/axios/issues/891
+4. Generators : https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5
 
 ### Youtube (React)
 
