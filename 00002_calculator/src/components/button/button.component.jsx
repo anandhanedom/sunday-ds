@@ -3,7 +3,7 @@ import React from 'react';
 //Material Ui
 import Button from '@material-ui/core/Button';
 
-const ButtonComponent = ({ color, label }) => {
+const ButtonComponent = ({ color, label, handleClick, children }) => {
   let button = null;
 
   switch (color) {
@@ -15,8 +15,11 @@ const ButtonComponent = ({ color, label }) => {
           color="primary"
           disableElevation
           style={{ fontSize: '30px', borderRadius: '50%', margin: '10px' }}
+          onClick={() => {
+            handleClick(children);
+          }}
         >
-          {label}
+          {children}
         </Button>
       );
       break;
@@ -29,8 +32,11 @@ const ButtonComponent = ({ color, label }) => {
           color="secondary"
           disableElevation
           style={{ fontSize: '30px', borderRadius: '50%', margin: '10px' }}
+          onClick={() => {
+            handleClick(children);
+          }}
         >
-          {label}
+          {children}
         </Button>
       );
       break;
@@ -41,9 +47,18 @@ const ButtonComponent = ({ color, label }) => {
           size="large"
           variant="contained"
           disableElevation
-          style={{ fontSize: '30px', borderRadius: '50%', margin: '10px' }}
+          style={{
+            fontSize: '30px',
+            borderRadius: '50%',
+            margin: '10px',
+            background: '#283637',
+            color: '#fff',
+          }}
+          onClick={() => {
+            handleClick(children);
+          }}
         >
-          {label}
+          {children}
         </Button>
       );
   }
