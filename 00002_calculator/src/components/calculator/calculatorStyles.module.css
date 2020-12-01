@@ -1,0 +1,12 @@
+.row {
+    display: block;
+}
+
+.calcapp {
+    background: #283637;
+    height: 100%;
+}
+
+.layout{
+    transform: translateY(50%);
+}
