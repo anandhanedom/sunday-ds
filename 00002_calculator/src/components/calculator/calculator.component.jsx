@@ -19,13 +19,51 @@ class Calculator extends Component {
   }
 
   handleClick = (val) => {
-    console.log(val);
+    switch (val) {
+      case '=': {
+        if (this.state.question) {
+          try {
+            // eslint-disable-next-line
+            const ans = eval(this.state.question);
+            console.log(ans);
+
+            if (ans === 'Infinity') {
+              this.setState({ answer: "Can't divide by 0" });
+            } else {
+              this.setState({ answer: ans });
+            }
+          } catch (e) {
+            this.setState({ answer: 'Math error!' });
+          }
+        }
+        break;
+      }
+
+      case 'C': {
+        this.setState({ question: '', answer: '' });
+        break;
+      }
+
+      case 'D': {
+        const str = this.state.question;
+        const newStr = str.substring(0, str.length - 1);
+        this.setState({ question: newStr });
+        // console.log(newStr);
+
+        break;
+      }
+
+      default: {
+        //Concatinate string
+        this.setState({ question: this.state.question + val });
+        break;
+      }
+    }
   };
 
   theme = createMuiTheme({
     palette: {
       primary: {
-        // Purple and green play nicely together.
         main: '#fff',
         contrastText: '#279285',
       },
@@ -41,7 +79,7 @@ class Calculator extends Component {
       <ThemeProvider theme={this.theme}>
         <div className={styles.calcapp}>
           <div className={styles.layout}>
-            <OutputScreen />
+            <OutputScreen question={this.state.question} />
             <div className={styles.row}>
               <ButtonComponent handleClick={this.handleClick} color="secondary">
                 C
@@ -64,10 +102,10 @@ class Calculator extends Component {
                 8
               </ButtonComponent>
               <ButtonComponent handleClick={this.handleClick}>
-                8
+                9
               </ButtonComponent>
               <ButtonComponent handleClick={this.handleClick} color="primary">
-                X
+                *
               </ButtonComponent>
             </div>
             <div className={styles.row}>
