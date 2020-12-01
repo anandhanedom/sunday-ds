@@ -1,0 +1,8 @@
+.row {
+    display: block;
+}
+
+.app {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
