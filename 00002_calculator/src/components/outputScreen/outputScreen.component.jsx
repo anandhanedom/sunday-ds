@@ -4,11 +4,11 @@ import React from 'react';
 import OutputScreenRow from '../outputScreenRow/outputScreenRow.component';
 
 //Used to hold 2 screen rows
-const OutputScreen = ({ question }) => {
+const OutputScreen = ({ question, answer }) => {
   return (
     <div className="screen">
-      <OutputScreenRow question={question} />
-      <OutputScreenRow />
+      <OutputScreenRow value={question} />
+      <OutputScreenRow value={answer} />
     </div>
   );
 };

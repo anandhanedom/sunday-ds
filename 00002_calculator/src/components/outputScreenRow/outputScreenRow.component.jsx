@@ -1,10 +1,10 @@
 import React from 'react';
 
 //Used to show question/answer
-const OutputScreenRow = () => {
+const OutputScreenRow = ({ value }) => {
   return (
     <div className="screen-row">
-      <input type="text" readOnly />
+      <input type="text" value={value} readOnly />
     </div>
   );
 };
