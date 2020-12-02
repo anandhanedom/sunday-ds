@@ -1,5 +1,6 @@
 .row {
-    display: block;
+    display: flex;
+    justify-content: space-between;
 }
 
 .calcapp {
@@ -8,4 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+ }
+
+
+ .layout{
+      width: 400px;
 }
