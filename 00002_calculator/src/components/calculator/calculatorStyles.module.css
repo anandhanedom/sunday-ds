@@ -1,12 +1,17 @@
 .row {
-    display: block;
+    display: flex;
+    justify-content: space-between;
 }
 
 .calcapp {
     background: #283637;
     height: 100%;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
 
-.layout{
-    transform: translateY(50%);
+
+ .layout{
+      width: 400px;
 }

@@ -25,12 +25,12 @@ class Calculator extends Component {
           try {
             // eslint-disable-next-line
             const ans = eval(this.state.question);
-            console.log(ans);
+            // console.log(ans);
 
-            if (ans === 'Infinity') {
+            if (ans === Infinity) {
               this.setState({ answer: "Can't divide by 0" });
             } else {
-              this.setState({ answer: ans });
+              this.setState({ answer: ans, question: '' });
             }
           } catch (e) {
             this.setState({ answer: 'Math error!' });
@@ -79,7 +79,10 @@ class Calculator extends Component {
       <ThemeProvider theme={this.theme}>
         <div className={styles.calcapp}>
           <div className={styles.layout}>
-            <OutputScreen question={this.state.question} />
+            <OutputScreen
+              question={this.state.question}
+              answer={this.state.answer}
+            />
             <div className={styles.row}>
               <ButtonComponent handleClick={this.handleClick} color="secondary">
                 C
