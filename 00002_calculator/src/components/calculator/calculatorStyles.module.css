@@ -5,8 +5,7 @@
 .calcapp {
     background: #283637;
     height: 100%;
-}
-
-.layout{
-    transform: translateY(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
