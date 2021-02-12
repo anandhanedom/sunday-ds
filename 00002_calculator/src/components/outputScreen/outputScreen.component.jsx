@@ -9,6 +9,8 @@ const OutputScreen = ({ question, answer }) => {
     <div className="screen">
       <OutputScreenRow value={question} />
       <OutputScreenRow value={answer} />
+ 
+ 
     </div>
   );
 };

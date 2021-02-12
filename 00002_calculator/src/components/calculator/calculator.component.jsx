@@ -30,7 +30,7 @@ class Calculator extends Component {
             if (ans === Infinity) {
               this.setState({ answer: "Can't divide by 0" });
             } else {
-              this.setState({ answer: ans });
+              this.setState({ answer: ans, question: '' });
             }
           } catch (e) {
             this.setState({ answer: 'Math error!' });
