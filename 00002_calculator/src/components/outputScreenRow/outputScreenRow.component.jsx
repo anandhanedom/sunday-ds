@@ -1,6 +1,8 @@
 import React from 'react';
 
 //Used to show question/answer
+ 
+ 
 const OutputScreenRow = ({ value, answer }) => {
   let res;
   if (answer) {
@@ -41,6 +43,7 @@ const OutputScreenRow = ({ value, answer }) => {
     );
   }
   return <div className="screen-row">{res}</div>;
+ 
 };
 
 export default OutputScreenRow;
