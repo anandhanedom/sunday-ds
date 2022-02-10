@@ -17,24 +17,21 @@ const getGCD = (a, b) => {
 // const newGCD = getGCD(8, 8);
 // console.log(newGCD);
 
-const getGCDWithEuclid = (a, b) => {
-  let remainder;
+// const calculateGCDWithEuclid = (a, b) => {
+//   if (b === 0) {
+//     return a;
+//   } else {
+//     if (a > b) {
+//       calculateGCDWithEuclid(a - b, b);
+//     } else {
+//       calculateGCDWithEuclid(a, b - a);
+//     }
+//   }
+// };
 
-  while (a % b > 0) {
-    remainder = a % b;
-    a = b;
-    b = remainder;
-  }
-
-  return b;
+const calculateGCDWithEuclid = (a, b) => {
+  return b ? calculateGCDWithEuclid(b, a % b) : a;
 };
 
-// const newGCD = getGCDWithEuclid(5, 20);
-
-const getGCDWithEuclidRecursion = (a, b) => {
-  const remainder = a % b;
-  return remainder > 0 ? getGCDWithEuclidRecursion(b, remainder) : b;
-};
-
-const newGCD = getGCDWithEuclidRecursion(1, 9);
+const newGCD = calculateGCDWithEuclid(0, 20);
 console.log(newGCD);
