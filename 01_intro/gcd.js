@@ -17,21 +17,22 @@ const getGCD = (a, b) => {
 // const newGCD = getGCD(8, 8);
 // console.log(newGCD);
 
-// const calculateGCDWithEuclid = (a, b) => {
-//   if (b === 0) {
-//     return a;
-//   } else {
-//     if (a > b) {
-//       calculateGCDWithEuclid(a - b, b);
-//     } else {
-//       calculateGCDWithEuclid(a, b - a);
-//     }
-//   }
-// };
-
 const calculateGCDWithEuclid = (a, b) => {
-  return b ? calculateGCDWithEuclid(b, a % b) : a;
+  if (b === 0) {
+    return a;
+  } else if (a > b) {
+    calculateGCDWithEuclid(a - b, b);
+  } else {
+    calculateGCDWithEuclid(a, b - a);
+  }
 };
 
-const newGCD = calculateGCDWithEuclid(0, 20);
+const newGCD = calculateGCDWithEuclid(5, 20);
 console.log(newGCD);
+
+// const calculateGCDWithEuclid = (a, b) => {
+//   return b ? calculateGCDWithEuclid(b, a % b) : a;
+// };
+
+// const newGCD = calculateGCDWithEuclid(0, 20);
+// console.log(newGCD);
