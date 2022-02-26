@@ -49,12 +49,12 @@ const calculateGCDWithEuclid = (a, b) => {
 const newGCD = calculateGCDWithEuclid(20, 0);
 console.log(newGCD);
 
-// const calculateGCDWithEuclid = (a, b) => {
-//   return b ? calculateGCDWithEuclid(b, a % b) : a;
-// };
+const calculateGCDWithEuclid = (a, b) => {
+  return b ? calculateGCDWithEuclid(b, a % b) : a;
+};
 
-// const newGCD = calculateGCDWithEuclid(0, 20);
-// console.log(newGCD);
+const newGCD = calculateGCDWithEuclid(0, 20);
+console.log(newGCD);
 
 // Robots
 
